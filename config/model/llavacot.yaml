@@ -1,0 +1,7 @@
+defaults:
+  - base
+  - _self_
+
+model_id: /workspace/models/Xkev/Llama-3.2V-11B-cot
+module_name: models.llavacot
+class_name: Llavacot

@@ -1,0 +1,7 @@
+defaults:
+  - base
+  - _self_
+
+model_id: /workspace/mnt/lc/models_lc/llava-hf-llava-v1.6-mistral-7b-hf
+module_name: models.llava16
+class_name: Llava16

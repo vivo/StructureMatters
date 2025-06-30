@@ -1,0 +1,42 @@
+# The structure of retrieval and multi_agents can be modified in this yaml file
+# agent and model configurations should be modified in their respective config folders
+
+# defaults:
+#   - retrieval: text # Change this to text/image when configuring retrieval
+#   - _self_
+
+run-name: mmlb # Experiment name
+
+# dataset:
+#   top_k: 1 # Top-k results used during inference
+
+# retrieval:
+#   top_k: 10 # Top-k results returned during retrieval
+#   cuda_visible_devices: '7'
+
+dataset_type: closed-domain
+input_type: image-text ###choose from structured-input/image/image-text
+latex_path: None ##you can add the predefined LaTeX here
+
+mdoc_agent:
+  cuda_visible_devices: '1'
+  truncate_len: null # Used for debugging; set to null for normal use
+  save_freq: 10 # Frequency of saving checkpoints
+  ans_key: ans_${run-name} # Key name for generated answers during prediction
+  save_message: false # Set to true to record responses from all agents
+
+  agents:
+    - agent: DocQA_agent # designed to answer DocQAs
+      model: qwen25vl # Configures the model to use
+
+  sum_agent:
+    agent: sum_agent # Responsible for summarizing answers from DocQA_agent
+    model: qwen25vl
+
+
+###use llama31 for evaluation
+eval_agent: # Used for result evaluation
+  truncate_len: null # Used for debugging; set to null for normal use
+  ans_key: ans_${run-name}
+  agent: base
+  model: llama31

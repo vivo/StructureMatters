@@ -1,0 +1,7 @@
+defaults:
+  - base
+  - _self_
+
+model_id: /workspace/mnt/lc/models_lc/HuggingFaceTB-SmolVLM-Instruct
+module_name: models.smolvlm
+class_name: Smolvlm

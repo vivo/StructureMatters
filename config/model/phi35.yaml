@@ -1,0 +1,7 @@
+defaults:
+  - base
+  - _self_
+
+model_id: /workspace/mnt/lc/models_lc/microsoft-Phi-3.5-vision-instruct
+module_name: models.phi35
+class_name: Phi35

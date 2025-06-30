@@ -1,0 +1,10 @@
+defaults:
+  - base
+  - _self_
+  
+use_text: true
+use_image: true
+
+
+###You can define your own system_prompt here
+system_prompt: None
