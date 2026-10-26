@@ -69,7 +69,7 @@ class MDocAgent(MultiAgentSystem):
         general_agent = self.agents[-1]
 
 
-        ###with_sys_promt needed to be set to False
+        ###with_sys_prompt needed to be set to False
         general_response, general_messages = general_agent.predict(question, texts, images, with_sys_prompt=False)
         # image_response, image_messages = image_agent.predict(question, texts=None, images=images, with_sys_prompt=True)
 
@@ -96,7 +96,7 @@ class MDocAgent(MultiAgentSystem):
         
         image_all_messages = "Image Agent Answer:\n" + image_response + "\n"
 
-        ###use same model to sumamry for evaluation
+        ###use same model to summarize for evaluation
         final_image_ans, final_image_messages = self.sum(question+"\n"+image_all_messages)
         
         return None, final_image_ans
